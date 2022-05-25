@@ -1,0 +1,8 @@
+FROM nixpkgs/nix-flakes:latest 
+
+RUN mkdir /app
+WORKDIR /app
+
+RUN echo "filter-syscalls = false" >> /etc/nix/nix.conf
+
+ENTRYPOINT [ "bash", "-c" ]

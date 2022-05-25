@@ -1,0 +1,9 @@
+FROM nixos/nix
+
+
+RUN mkdir /app 
+RUN echo "filter-syscalls = false" >> /etc/nix/nix.conf
+RUN nix-channel --update
+
+WORKDIR /app
+ENTRYPOINT [ "bash", "-c" ]
